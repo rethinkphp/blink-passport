@@ -1,0 +1,29 @@
+{
+    "name": "blink/passport",
+    "description": "A passport plugin for the Blink framework",
+    "keywords": [
+        "blink",
+        "passport",
+        "oauth"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jin Hu",
+            "email": "bixuehujin@gmail.com"
+        }
+    ],
+    "require": {
+        "league/oauth2-server": "^5.1"
+    },
+    "require-dev": {
+        "blink/blink": "dev-psr-7",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "blink\\passport\\": "src",
+            "blink\\passport\\tests\\": "tests"
+        }
+    }
+}
