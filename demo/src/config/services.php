@@ -42,4 +42,11 @@ return [
             ]
         ],
     ],
+    'cache' => [
+        'class' => \blink\redis\Cache::class,
+        'redis' => [
+            'class' => \blink\redis\Client::class,
+            'servers' => 'tcp://127.0.0.1:6379',
+        ],
+    ],
 ];

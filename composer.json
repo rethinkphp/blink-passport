@@ -14,7 +14,8 @@
         }
     ],
     "require": {
-        "league/oauth2-server": "^5.1"
+        "league/oauth2-server": "^5.1",
+        "blink/redis": "dev-master"
     },
     "require-dev": {
         "blink/blink": "dev-psr-7",
@@ -25,5 +26,7 @@
             "blink\\passport\\": "src",
             "blink\\passport\\tests\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
