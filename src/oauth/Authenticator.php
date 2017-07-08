@@ -41,17 +41,17 @@ class Authenticator implements MiddlewareContract
 
 
         try {
-            $request = $server->validateAuthenticatedRequest($psrRequest);
+            $psrRequest = $server->validateAuthenticatedRequest($psrRequest);
 
-            $params = $request->getAttributes();
+            $params = $psrRequest->getAttributes();
 
-            $user = User::findIdentity($params['oauth_user_id']);
+            $session = session()->get($params['oauth_access_token_id']);
 
-            if (!$user) {
+            if (!$session) {
                 return;
             }
 
-            auth()->login($user, true);
+            $request->setSession($session);
         } catch (OAuthServerException $e) {
             //$psrResponse = new Response();
             //response()->data = $e->generateHttpResponse($psrResponse);
