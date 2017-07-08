@@ -15,10 +15,11 @@
     ],
     "require": {
         "league/oauth2-server": "^5.1",
-        "blink/redis": "dev-master"
+        "blink/redis": "dev-master",
+        "zendframework/zend-diactoros": "1.3.*"
     },
     "require-dev": {
-        "blink/blink": "dev-psr-7",
+        "blink/blink": "dev-session-v2",
         "phpunit/phpunit": "~5.0"
     },
     "autoload": {

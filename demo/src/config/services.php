@@ -2,7 +2,9 @@
 return [
     'request' => [
         'class' => \blink\http\Request::class,
-        'middleware' => [],
+        'middleware' => [
+            \blink\passport\oauth\Authenticator::class,
+        ],
     ],
     'response' => [
         'class' => \blink\http\Response::class,
@@ -28,8 +30,10 @@ return [
         ]
     ],
     'auth' => [
-        'class' => 'blink\auth\Auth',
+        'class' => \blink\passport\oauth\OAuth::class,
         'model' => 'app\models\User',
+        'privateKey' => __DIR__ . '/private.key',
+        'publicKey' => __DIR__ . '/public.key',
     ],
     'log' => [
         'class' => 'blink\log\Logger',
