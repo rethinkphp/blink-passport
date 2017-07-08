@@ -16,7 +16,6 @@ use blink\passport\services\OAuth;
 class Passport extends Object implements PluginContract
 {
     public $users = Users::class;
-    public $oauth = OAuth::class;
 
     /**
      * @inheritDoc
@@ -32,7 +31,6 @@ class Passport extends Object implements PluginContract
     {
         $services = [
             'passport.users' => $this->users,
-            'passport.oauth' => $this->oauth,
         ];
 
         foreach ($services as $id => $config) {

@@ -23,6 +23,7 @@ return [
     */
     'session' => [
         'class' => 'blink\session\Manager',
+        'sessionClass' => \blink\passport\oauth\AccessToken::class,
         'expires' => 3600 * 24 * 15,
         'storage' => [
             'class' => 'blink\session\FileStorage',
@@ -31,7 +32,7 @@ return [
     ],
     'auth' => [
         'class' => \blink\passport\oauth\OAuth::class,
-        'model' => 'app\models\User',
+        'model' => \blink\passport\models\User::class,
         'privateKey' => __DIR__ . '/private.key',
         'publicKey' => __DIR__ . '/public.key',
     ],
